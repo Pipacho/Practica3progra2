@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    {% if user.is_authenticated %}
+
+    <a>@{{ user.username }}</a>
+    <a href="{% url 'logout' %}">LOGOUT</a>
+    <a href="{% url 'upload_file' %}">SUBIR ARCHIVO</a>
+    <a href="{% url 'file_repository' %}">ARCHIVOS SUBIDOS</a>
+    {% else %}
+
+
+    <a href="{% url 'login' %}">LOGIN</a>
+    <a href="{% url 'registro' %}">REGISTRATE</a>
+    {% endif %}
+</header>
+<h1> Home </h1>
+
+</body>
+
+
+</html>

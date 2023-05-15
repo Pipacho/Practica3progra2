@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Repositorio de archivos </h1>
+<ul>
+  {% for file in uploaded_files %}
+    <li><a href="{% url 'edit_file' file.id %}">{{ file.file.name }}</a></li>
+  {% empty %}
+    <li>Aún no hay archivos subidos.</li>
+  {% endfor %}
+</ul>
+
+
+</body>
+</html>
